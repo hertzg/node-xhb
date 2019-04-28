@@ -1,0 +1,16 @@
+{
+  "extends": ["tslint:latest", "tslint-config-prettier"],
+  "rules": {
+    "object-literal-sort-keys": false,
+    "no-console": false,
+    "interface-name": false,
+    "no-bitwise": false,
+    "comment-format": false,
+    "ordered-imports": false,
+    "variable-name": false,
+    "one-variable-per-declaration": false
+  },
+  "linterOptions": {
+    "exclude": ["node_modules/**/*.ts", "build/**/*.ts"]
+  }
+}

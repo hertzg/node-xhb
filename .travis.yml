@@ -5,9 +5,12 @@ os:
   - osx
 
 node_js:
-  - "12"
-  - "11"
-  - "10"
+  - lts/argon
+  - lts/boron
+  - lts/carbon
+  - lts/dubnium
+  - lts/*
+  - node
 
 cache:
   directories:

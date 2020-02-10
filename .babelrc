@@ -11,5 +11,5 @@
     ],
     "@babel/typescript"
   ],
-  "sourceMaps": "inline"
+  "sourceMaps": true
 }

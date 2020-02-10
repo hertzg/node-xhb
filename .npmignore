@@ -5,3 +5,5 @@ node_modules/
 tslint.json
 *.xhb
 *.xhb~
+*.map
+__tests__/

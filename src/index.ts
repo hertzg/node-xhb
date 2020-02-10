@@ -112,7 +112,7 @@ export function parse(xml: string, options: ParseOptions = {}): XHB {
         xhb.accounts.push(opts.onEntity(parseAccount(node), node))
         break
       case NodeName.ARCHIVE:
-        xhb.archives.push(opts.onEntity(parseArchive(node, xhb), node))
+        xhb.archives.push(opts.onEntity(parseArchive(node), node))
         break
       case NodeName.ASSIGN:
         xhb.assigns.push(opts.onEntity(parseAssign(node, xhb), node))
@@ -133,7 +133,7 @@ export function parse(xml: string, options: ParseOptions = {}): XHB {
         xhb.tags.push(opts.onEntity(parseTag(node), node))
         break
       case NodeName.OPERATION:
-        xhb.operations.push(opts.onEntity(parseOperation(node, xhb), node))
+        xhb.operations.push(opts.onEntity(parseOperation(node), node))
         break
       default:
         opts.onUnknownNode(node)

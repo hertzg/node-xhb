@@ -8,7 +8,7 @@
     "email": "georgedot@gmail.com"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=8"
   },
   "keywords": [
     "xhb",

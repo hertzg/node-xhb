@@ -43,21 +43,21 @@
     "test": "jest"
   },
   "dependencies": {
-    "printj": "^1.2.1",
+    "printj": "^1.2.2",
     "xml-parser": "^1.2.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
-    "@babel/preset-typescript": "^7.3.3",
-    "@types/jest": "^24.0.11",
-    "@types/node": "^11.13.8",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-typescript": "^7.8.3",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^11.15.5",
     "@types/xml-parser": "^1.2.29",
-    "jest": "^24.7.1",
-    "rimraf": "^2.6.3",
-    "tslint": "^5.13.1",
+    "jest": "^24.9.0",
+    "rimraf": "^2.7.1",
+    "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.4.5"
+    "typescript": "^3.7.5"
   }
 }

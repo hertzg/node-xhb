@@ -1,6 +1,6 @@
 {
   "name": "xhb",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Provides ability to read and modify xhb files used by HomeBank",
   "main": "build/index.js",
   "author": {

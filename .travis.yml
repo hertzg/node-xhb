@@ -4,10 +4,11 @@ os:
   - linux
 
 node_js:
-  - lts/carbon
-  - lts/dubnium
   - lts/*
   - node
+  - 13
+  - 11
+  - 10
 
 cache:
   directories:

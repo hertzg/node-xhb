@@ -6,11 +6,11 @@ in somewhat sane manner.
 
 ## Installation and Usage
 
-```
+```bash
 $ npm install xhb --save
 ```
 
-```
+```typescript
 import FS from 'fs'
 import {parse, serialize} from 'xhb'
 
@@ -28,7 +28,7 @@ FS.writeFileSync('./homebank-modified.xhb', modified, {encoding: 'utf8'})
 
 As the original code is using GLib types, following aliases are used to map to javascript types
 
-```
+```typescript
 export type gShort = number
 export type gUShort = number
 export type gInt = number
@@ -40,7 +40,7 @@ export type gBoolean = number // https://developer.gnome.org/glib/stable/glib-Ba
 
 ### XHB File structure
 
-```
+```typescript
 export interface XHB {
   versions: Versions
   properties?: Properties

@@ -40,7 +40,8 @@
     "build:types": "tsc -p tsconfig.build.json --emitDeclarationOnly --listEmittedFiles",
     "build:js": "babel src --out-dir build --extensions \".ts,.tsx\" --ignore **/__tests__ --verbose",
     "prettier": "prettier",
-    "test": "jest"
+    "test": "jest",
+    "release": "semantic-release"
   },
   "dependencies": {
     "printj": "^1.2.2",
@@ -58,6 +59,16 @@
     "rimraf": "^3.0.2",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.5",
+    "semantic-release": "^17.1.1",
+    "conventional-changelog-conventionalcommits": "^4.3.0",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/release-notes-generator": "^9.0.1",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/exec": "^5.0.0",
+    "@semantic-release/npm": "^7.0.5",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.0.7",
+    "prettier": "^2.0.5"
   }
 }

@@ -7,7 +7,7 @@ on:
 
 jobs:
 
-  test-integration:
+  test:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -22,20 +22,6 @@ jobs:
       fail-fast: false
 
     steps:
-      - name: Setup sudoless tcpdump (linux only)
-        if: ${{ success() && startsWith(matrix.os, 'ubuntu-') }}
-        run: |
-          sudo groupadd pcap
-          sudo usermod -a -G pcap $USER
-          sudo chgrp pcap /usr/sbin/tcpdump
-          sudo setcap cap_net_raw,cap_net_admin=eip /usr/sbin/tcpdump
-          sudo ln -s /usr/sbin/tcpdump /usr/bin/tcpdump
-
-      - name: Setup sudoless tcpdump (macos only)
-        if: ${{ success() && startsWith(matrix.os, 'macos-') }}
-        run: |
-          sudo chmod o+rw /dev/bpf*
-
       - name: Setup Node
         uses: actions/setup-node@v2-beta
         with:
@@ -47,7 +33,7 @@ jobs:
       - name: Cache node modules
         uses: actions/cache@v2
         env:
-          cache-name: test-integration-matrix-npm-cache
+          cache-name: test-matrix-npm-cache
         with:
           # npm cache files are stored in `~/.npm` on Linux/macOS
           path: ~/.npm
@@ -59,10 +45,10 @@ jobs:
             npm-${{ runner.os }}-
             npm-
 
-      - name: Install dependencies (full)
+      - name: Install dependencies
         run: |
           npm i --prefer-offline --no-audit
           npm list --depth=0 || true
 
-      - name: Test (integration)
+      - name: Run Tests
         run: npm run test

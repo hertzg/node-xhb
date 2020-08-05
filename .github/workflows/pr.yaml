@@ -27,6 +27,10 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
+      - name: Configure git to avoid issues with line endings (windows only)
+        if: matrix.os == 'windows-latest'
+        run: git config --global core.autocrlf false
+
       - name: Checkout
         uses: actions/checkout@v2
 

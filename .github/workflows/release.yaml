@@ -61,7 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - test
-    if: ${{ success() && github.event_name == 'push' && github.ref == 'refs/heads/master' && github.repository == 'hertzg/node-gdate-julian' }}
+    if: ${{ success() && github.event_name == 'push' && github.ref == 'refs/heads/master' && github.repository == 'hertzg/node-xhb' }}
     steps:
       - name: Setup Node
         uses: actions/setup-node@v2-beta

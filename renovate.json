@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "config:base",
+    ":semanticCommits"
+    ":preserveSemverRanges",
+    "group:all",
+    "schedule:monthly",
+    ":maintainLockFilesMonthly"
+  ],
+  "separateMajorMinor": false,
+  "lockFileMaintenance": {
+    "extends": [
+      "group:all"
+    ]
+  }
+}

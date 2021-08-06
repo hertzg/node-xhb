@@ -1,7 +1,7 @@
 {
   "extends": [
     "config:base",
-    ":semanticCommits"
+    ":semanticCommits",
     ":preserveSemverRanges",
     "group:all",
     "schedule:monthly",

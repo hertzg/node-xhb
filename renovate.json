@@ -4,8 +4,8 @@
     ":semanticCommits",
     ":preserveSemverRanges",
     ":maintainLockFilesMonthly",
-    "schedule:monthly",
+    "schedule:daily",
     "group:all"
   ],
-  "separateMajorMinor": false,
+  "separateMajorMinor": false
 }

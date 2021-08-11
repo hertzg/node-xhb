@@ -3,14 +3,9 @@
     "config:base",
     ":semanticCommits",
     ":preserveSemverRanges",
-    "group:all",
+    ":maintainLockFilesMonthly",
     "schedule:monthly",
-    ":maintainLockFilesMonthly"
+    "group:all"
   ],
   "separateMajorMinor": false,
-  "lockFileMaintenance": {
-    "extends": [
-      "group:all"
-    ]
-  }
 }

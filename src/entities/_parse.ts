@@ -1,4 +1,4 @@
-import { gCharP, gDouble, gInt, gUInt32 } from './_g_types'
+import type { gCharP, gDouble, gInt, gUInt32 } from './_g_types'
 
 const parseAsInt = <T extends number>(s: string): T => parseInt(s, 10) as T
 const parseAsString = <T extends string>(s: string) => s && (String(s) as T)

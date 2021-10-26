@@ -7,7 +7,7 @@ import {
   hb_xml_tag,
 } from './_serialize'
 import { sprintf } from 'printj'
-import { gCharP, gDouble, gUInt32, gUShort } from './_g_types'
+import type { gCharP, gDouble, gUInt32, gUShort } from './_g_types'
 
 export interface Category {
   key: gUInt32
@@ -25,7 +25,7 @@ export enum CategoryFlag {
   FORCED = (1 << 4) as gUShort,
 }
 
-export function parse({ attributes }: Node): Category {
+export function parseCategory({ attributes }: Node): Category {
   const budgets: gDouble[] = new Array(12)
   for (let i = 0, ln = 12; i <= ln; i++) {
     const bAttr = `b${i}`
@@ -46,11 +46,11 @@ export function parse({ attributes }: Node): Category {
 const hb_xml_attrs_budgets = (budget) =>
   Array.isArray(budget)
     ? budget
-        .filter((b) => b !== null || b !== undefined)
+        .filter((b) => b !== null && b !== undefined)
         .map((v, i) => sprintf('b%d="%s"', i, dtostr(v)))
         .join(' ')
     : ''
-export const serialize = (category: Category): string =>
+export const serializeCategory = (category: Category): string =>
   hb_xml_tag(
     '<cat',
     hb_xml_attr_int('key', category.key),

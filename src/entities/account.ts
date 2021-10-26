@@ -7,7 +7,7 @@ import {
   hb_xml_attr_txt_crlf,
   hb_xml_tag,
 } from './_serialize'
-import { gCharP, gDouble, gUInt32, gUShort } from './_g_types'
+import type { gCharP, gDouble, gUInt32, gUShort } from './_g_types'
 
 export interface Account {
   key: gUInt32
@@ -50,7 +50,7 @@ export enum AccountType {
   //TYPE_EQUITY     = 10 as gushort, // Capitaux propres
 }
 
-export function parse({ attributes }: Node): Account {
+export function parseAccount({ attributes }: Node): Account {
   return {
     key: atoi(attributes.key),
     flags: atoi(attributes.flags),
@@ -69,7 +69,7 @@ export function parse({ attributes }: Node): Account {
   }
 }
 
-export const serialize = (account: Account): string =>
+export const serializeAccount = (account: Account): string =>
   hb_xml_tag(
     '<account',
     hb_xml_attr_int('key', account.key),

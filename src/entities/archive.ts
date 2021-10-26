@@ -72,7 +72,7 @@ export enum ScheduledWeekendPolicy {
   AFTER = 2 as gUShort,
 }
 
-export function parse({ attributes }: Node): Archive {
+export function parseArchive({ attributes }: Node): Archive {
   const tags: gCharP[] = attributes.tags
     ? parseGCharP(attributes.tags).split(' ')
     : []
@@ -128,7 +128,7 @@ const archiveSplitsToSplits = (aSplits: ArchiveSplit[]): AttrSplit[] =>
     mem: aSplit.memo,
   }))
 
-export const serialize = (archive: Archive): string => {
+export const serializeArchive = (archive: Archive): string => {
   const tags = tags_toStr(archive.tags)
   const splits = archiveSplitsToSplits(archive.splits)
   return hb_xml_tag(

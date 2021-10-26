@@ -10,7 +10,7 @@ import {
   hb_xml_tag,
   tags_toStr,
 } from './_serialize'
-import { gCharP, gDouble, gUInt32, gUShort } from './_g_types'
+import type { gCharP, gDouble, gUInt32, gUShort } from './_g_types'
 
 export interface Operation {
   date: gUInt32
@@ -63,15 +63,7 @@ export enum OperationFlag {
   SPLIT = (1 << 8) as gUShort,
 }
 
-export enum ArchiveStatus {
-  NONE,
-  CLEARED,
-  RECONCILED,
-  REMIND,
-  //VOID
-}
-
-export function parse({ attributes }: Node): Operation {
+export function parseOperation({ attributes }: Node): Operation {
   const tags: gCharP[] = attributes.tags
     ? parseGCharP(attributes.tags).split(' ')
     : []
@@ -123,7 +115,7 @@ const operationSplitsToSplits = (aSplits: OperationSplit[]): AttrSplit[] =>
     mem: aSplit.memo,
   }))
 
-export const serialize = (operation: Operation): string => {
+export const serializeOperation = (operation: Operation): string => {
   const tags = tags_toStr(operation.tags)
   const splits = operationSplitsToSplits(operation.splits)
   return hb_xml_tag(

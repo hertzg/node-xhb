@@ -1,5 +1,5 @@
 import { sprintf } from 'printj'
-import { gCharP, gDouble, gUInt32 } from './_g_types'
+import type { gCharP, gDouble, gUInt32 } from './_g_types'
 
 export const hb_xml_attr_txt = (attrName: string, value: gCharP) =>
   value === null || value === undefined

@@ -1,9 +1,9 @@
 import { Node } from 'xml-parser'
-import { PayMode } from './payee'
+import { PayMode } from './operation'
 import { atoi, parseGCharP } from './_parse'
 import { VolatileXHB } from '../index'
 import { hb_xml_attr_int, hb_xml_attr_txt, hb_xml_tag } from './_serialize'
-import { gCharP, gUInt32, gUShort } from './_g_types'
+import type { gCharP, gUInt32, gUShort } from './_g_types'
 
 export interface Assign {
   key: gUInt32
@@ -31,7 +31,7 @@ export enum AssignFlag {
   OVWMOD = (1 << 11) as gUShort,
 }
 
-export function parse({ attributes }: Node, xhb: VolatileXHB): Assign {
+export function parseAssign({ attributes }: Node, xhb: VolatileXHB): Assign {
   const entry: Assign = {
     key: atoi(attributes.key),
     flags: atoi(attributes.flags),
@@ -53,7 +53,7 @@ export function parse({ attributes }: Node, xhb: VolatileXHB): Assign {
   return entry
 }
 
-export const serialize = (assign: Assign): string =>
+export const serializeAssign = (assign: Assign): string =>
   hb_xml_tag(
     '<asg',
     hb_xml_attr_int('key', assign.key),

@@ -1,53 +1,21 @@
 import XMLParser, { Node } from 'xml-parser'
 import {
-  parse as parseProperties,
+  parseProperties,
   Properties,
-  serialize as serializeProperties,
+  serializeProperties,
 } from './entities/properties'
-import {
-  Category,
-  parse as parseCategory,
-  serialize as serializeCategory,
-} from './entities/category'
-import {
-  parse as parsePayee,
-  Payee,
-  serialize as serializePayee,
-} from './entities/payee'
-import {
-  Assign,
-  parse as parseAssign,
-  serialize as serializeAssign,
-} from './entities/assign'
-import {
-  Account,
-  parse as parseAccount,
-  serialize as serializeAccount,
-} from './entities/account'
-import {
-  parse as parseVersions,
-  serialize as serializeVersions,
-  Versions,
-} from './entities/versions'
-import {
-  Currency,
-  parse as parseCurrency,
-  serialize as serializeCurrency,
-} from './entities/currency'
-import {
-  parse as parseTag,
-  serialize as serializeTag,
-  Tag,
-} from './entities/tag'
-import {
-  Archive,
-  parse as parseArchive,
-  serialize as serializeArchive,
-} from './entities/archive'
+import { Category, parseCategory, serializeCategory } from './entities/category'
+import { parsePayee, Payee, serializePayee } from './entities/payee'
+import { Assign, parseAssign, serializeAssign } from './entities/assign'
+import { Account, parseAccount, serializeAccount } from './entities/account'
+import { parseVersions, serializeVersions, Versions } from './entities/versions'
+import { Currency, parseCurrency, serializeCurrency } from './entities/currency'
+import { parseTag, serializeTag, Tag } from './entities/tag'
+import { Archive, parseArchive, serializeArchive } from './entities/archive'
 import {
   Operation,
-  parse as parseOperation,
-  serialize as serializeOperation,
+  parseOperation,
+  serializeOperation,
 } from './entities/operation'
 
 export interface XHB {
@@ -185,3 +153,17 @@ export const serialize = (xhb: XHB, options: SerializeOptions = {}): string => {
     .filter((line) => line && line.length)
     .join('\n')
 }
+
+export * from './entities/_g_types'
+export * from './entities/_parse'
+export * from './entities/_serialize'
+export * from './entities/account'
+export * from './entities/archive'
+export * from './entities/assign'
+export * from './entities/category'
+export * from './entities/currency'
+export * from './entities/operation'
+export * from './entities/payee'
+export * from './entities/properties'
+export * from './entities/tag'
+export * from './entities/versions'

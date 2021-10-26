@@ -2,7 +2,7 @@ import { Node } from 'xml-parser'
 import { atoi, parseGCharP, parseGDouble } from './_parse'
 import { sprintf } from 'printj'
 import { dtostr } from './_serialize'
-import { gBoolean, gCharP, gDouble, gShort, gUInt32, gUShort } from './_g_types'
+import type { gBoolean, gCharP, gDouble, gShort, gUInt32, gUShort } from './_g_types'
 
 export interface Currency {
   key: gUInt32
@@ -23,7 +23,7 @@ export enum CurrencyFlag {
   CUSTOM = (1 << 1) as gUShort,
 }
 
-export function parse({ attributes }: Node): Currency {
+export function parseCurrency({ attributes }: Node): Currency {
   return {
     key: atoi(attributes.key),
     flags: atoi(attributes.flags),
@@ -39,7 +39,7 @@ export function parse({ attributes }: Node): Currency {
   }
 }
 
-export const serialize = (currency: Currency): string =>
+export const serializeCurrency = (currency: Currency): string =>
   sprintf(
     '<cur key="%d" flags="%d" iso="%s" name="%s" symb="%s" syprf="%d" dchar="%s" gchar="%s" frac="%d" rate="%s" mdate="%d"/>',
     currency.key,

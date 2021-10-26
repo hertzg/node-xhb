@@ -6,7 +6,7 @@ import {
   hb_xml_attr_txt,
   hb_xml_tag,
 } from './_serialize'
-import { gCharP, gUInt32, gUShort } from './_g_types'
+import type { gCharP, gUInt32, gUShort } from './_g_types'
 
 export interface Properties {
   owner: gCharP
@@ -22,7 +22,7 @@ export enum VehicleScheduledTransactionMode {
   NUMBER_OF_DAYS = 1 as gUShort,
 }
 
-export function parse({ attributes }: Node): Properties {
+export function parseProperties({ attributes }: Node): Properties {
   return {
     owner: parseGCharP(attributes.title),
     baseCurrency: atoi(attributes.curr),
@@ -33,7 +33,7 @@ export function parse({ attributes }: Node): Properties {
   }
 }
 
-export const serialize = (properties: Properties): string =>
+export const serializeProperties = (properties: Properties): string =>
   hb_xml_tag(
     '<properties',
     hb_xml_attr_txt('title', properties.owner),

@@ -38,7 +38,8 @@
     "build": "tsc -p tsconfig.build.json",
     "prettier": "prettier",
     "test": "jest",
-    "release": "semantic-release"
+    "release": "semantic-release",
+    "semantic-release": "semantic-release"
   },
   "files": [
     "dist/*"

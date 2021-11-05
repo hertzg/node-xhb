@@ -5,26 +5,14 @@ on:
     branches:
       - master
 
+# Only tests for last head of the branch need to pass, others irrelevant
+concurrency: 
+  group: ${{ github.head_ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os:
-          - windows-latest
-          - ubuntu-latest
-          - macos-latest
-        node: # https://nodejs.org/en/about/releases/
-          - "14.x" # Active LTS
-          - "12.x" # Active LTS
-          - "10.x" # Maintenance LTS
-      fail-fast: false
-    steps:
-      - run: git config --global core.autocrlf false
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          check-latest: true
-          node-version: ${{ matrix.node }}
-      - uses: bahmutov/npm-install@v1
-      - run: npm run test
+    uses: hertzg/node-xhb/.github/workflows/reusable/test-matrix.yml@master
+    with:
+      fail-fast: false # we need to run all tests to help find issues
+

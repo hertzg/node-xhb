@@ -29,8 +29,8 @@ jobs:
           node-version: ${{ matrix.node }}
       - uses: bahmutov/npm-install@v1
       - run: |
-          npm version major --no-git-tag-version
-          jq ".version += \"-$PREID+$(git rev-parse --short HEAD)\"" ./package.json > ./package.json
+          cat <<< $(jq -r ".version += \"-$PREID+$(git rev-parse --short HEAD)\"" ./package.json) > ./package.json
+          npm version --no-git-tag-version --allow-same-version `jq -r ".version" ./package.json`
           npm run build
           mkdir pack/
           npm pack --pack-destination pack/

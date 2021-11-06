@@ -1,3 +1,5 @@
+name: "${{ matrix.os }}/${{ matrix.node }}"
+
 on:
   workflow_call:
     inputs:

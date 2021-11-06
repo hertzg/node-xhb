@@ -1,0 +1,47 @@
+name: Test (with node/${{ matrix.node }})
+
+on: 
+  workflow_call:
+    inputs:
+      os:
+        description: __JSON Array__ of OSes to run the job on
+        type: string
+        required: false
+        default: |
+          [
+            "ubuntu-latest",
+            "windows-latest",
+            "macos-latest"
+          ]
+      node:
+        description: __JSON Object__ of workflox matrix test with
+        type: string
+        required: false
+        default: | 
+          [
+            "16.x",
+            "14.x"
+          ]
+      fail-fast:
+        description: __Boolean__ weather to fail the job on first failure
+        type: boolean
+        required: false
+        default: false
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: ${{ fromJSON(inputs.os) }}
+        node: ${{ fromJSON(inputs.node) }}
+      fail-fast: ${{ inputs.fail-fast }}
+    steps:
+      - run: git config --global core.autocrlf false
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          check-latest: true
+          node-version: ${{ matrix.node }}
+      - uses: bahmutov/npm-install@v1
+      - run: npm run test

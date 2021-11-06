@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   test:
-    uses: hertzg/node-xhb/.github/workflows/reusable/test-matrix.yml@master
+    uses: hertzg/node-xhb/.github/workflows/_test-matrix.yml@master
     with:
       fail-fast: true # if any fail, fail fast and stop release process
 

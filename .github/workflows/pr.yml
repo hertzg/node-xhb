@@ -7,7 +7,7 @@ on:
 
 # Only tests for last head of the branch need to pass, others irrelevant
 concurrency:
-  group: "${{ github.head_ref }}"
+  group: '${{ github.head_ref }}'
   cancel-in-progress: true
 
 jobs:
@@ -26,15 +26,14 @@ jobs:
           check-latest: true
           node-version: ${{ matrix.node }}
       - uses: bahmutov/npm-install@v1
-      - run: |
-          contents=$(jq -r ".version += \"-${PREID}+$(git rev-parse --short HEAD)\"" ./package.json) && echo "$contents" > ./package.json
-          npm version --no-git-tag-version --allow-same-version "$(jq -r ".version" ./package.json)"
-          npm run build
-          mkdir pack/
-          npm pack --pack-destination pack/
+      - run: contents=$(jq -r ".version += \"-${PREID}+$(git rev-parse --short HEAD)\"" ./package.json) && echo "$contents" > ./package.json
         env:
           PREID: |
             pr${{ github.event.pull_request.number }}.${{github.run_id}}${{github.run_number}}${{github.run_attempt}}
+      - run: npm version --no-git-tag-version --allow-same-version "$(jq -r ".version" ./package.json)"
+      - run: npm run build
+      - run: mkdir pack/
+      - run: npm pack --pack-destination pack/
       - uses: actions/upload-artifact@v2
         with:
           name: pr${{ github.event.pull_request.number }}-artifacts

@@ -28,7 +28,7 @@ jobs:
       - uses: bahmutov/npm-install@v1
       - run: |
           contents=$(jq -r ".version += \"-${PREID}+$(git rev-parse --short HEAD)\"" ./package.json) && echo "$contents" > ./package.json
-          npm version --no-git-tag-version --allow-same-version $(jq -r ".version" ./package.json)
+          npm version --no-git-tag-version --allow-same-version "$(jq -r ".version" ./package.json)"
           npm run build
           mkdir pack/
           npm pack --pack-destination pack/

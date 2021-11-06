@@ -17,8 +17,6 @@ jobs:
       fail-fast: false # we need to run all tests to help find issues
 
   pack:
-    needs:
-      - test
     runs-on: ubuntu-latest
     steps:
       - run: git config --global core.autocrlf false

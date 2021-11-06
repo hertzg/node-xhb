@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  pack:
     runs-on: ubuntu-latest
     steps:
       - run: git config --global core.autocrlf false
@@ -22,27 +22,16 @@ jobs:
           node-version: lts/*
       - uses: bahmutov/npm-install@v1
       - run: npm run build
+      - run: |
+          mkdir pack/
+          cd pack/
+          npm pack ../
       - uses: actions/upload-artifact@v2
         with:
-          name: pr${{ github.event.pull_request.number }}-dist
-          path: dist/
-
-  pack:
-    runs-on: ubuntu-latest
-    steps:
-      - run: git config --global core.autocrlf false
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          check-latest: true
-          node-version: lts/*
-      - run: mkdir pack/
-      - run: npm pack --pack-destination pack/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: pr${{ github.event.pull_request.number }}-pack
+          name: pack
           path: |
             pack/*
+            dist/*
 
   test:
     uses: hertzg/node-xhb/.github/workflows/_test-matrix.yml@master

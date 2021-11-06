@@ -1,4 +1,4 @@
-name: Test (with node/${{ matrix.node }})
+name: Test
 
 on: 
   workflow_call:

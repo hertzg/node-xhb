@@ -1,6 +1,4 @@
-name: Test
-
-on: 
+on:
   workflow_call:
     inputs:
       os:

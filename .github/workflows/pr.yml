@@ -30,16 +30,13 @@ jobs:
       - uses: bahmutov/npm-install@v1
       - run: |
           npm version major --no-git-tag-version
-          VERSION_APPEND="-pr$PR_ID.$RUN_ID$RUN_NUMBER$RUN_ATTEMPT+$(git rev-parse --short HEAD)"
-          jq ".version += \"-$(VERSION_APPEND)\"" ./package.json > ./package.json
+          jq ".version += \"-$PREID+$(git rev-parse --short HEAD)\"" ./package.json > ./package.json
           npm run build
           mkdir pack/
           npm pack --pack-destination pack/
         env:
-          PR_ID: ${{ github.event.pull_request.number }}
-          RUN_ID: ${{ github.run_id }}
-          RUN_NUMBER: ${{ github.run_number }}
-          RUN_ATTEMPT: ${{ github.run_attempt }}
+          PREID: |
+            pr${{ github.event.pull_request.number }}.${{github.run_id}}${{github.run_number}}${{github.run_attempt}}
       - uses: actions/upload-artifact@v2
         with:
           name: pr${{ github.event.pull_request.number }}-artifacts

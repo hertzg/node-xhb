@@ -18,3 +18,5 @@ jobs:
           stale-pr-label: 'no-pr-activity'
           days-before-stale: 25
           days-before-close: 7
+          exempt-issue-labels: never-stale
+          exempt-pr-labels: never-stale

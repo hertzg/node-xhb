@@ -20,6 +20,7 @@ jobs:
         with:
           check-latest: true
           node-version: lts/*
+      - run: yarn
       - run: yarn run build
       - run: mkdir pack || true && yarn pack --out pack/%s-%v.tgz
       - uses: actions/upload-artifact@v2

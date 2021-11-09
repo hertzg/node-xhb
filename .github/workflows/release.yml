@@ -33,6 +33,8 @@ jobs:
         with:
           check-latest: true
           node-version: lts/*
+      - run: yarn
+      - run: yarn run build
       - run: yarn dlx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

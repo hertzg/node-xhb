@@ -28,7 +28,7 @@ module.exports = {
     [
       '@semantic-release/exec',
       {
-        prepareCmd: 'prettier --write CHANGELOG.md',
+        prepareCmd: 'yarn prettier --write CHANGELOG.md',
       },
     ],
     ['@semantic-release/npm', { tarballDir: 'pack' }],

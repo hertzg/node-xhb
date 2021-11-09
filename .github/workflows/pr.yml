@@ -20,12 +20,8 @@ jobs:
         with:
           check-latest: true
           node-version: lts/*
-      - uses: bahmutov/npm-install@v1
-      - run: npm run build
-      - run: |
-          mkdir pack/
-          cd pack/
-          npm pack ../
+      - run: yarn run build
+      - run: mkdir pack || true && yarn pack --out pack/%s-%v.tgz
       - uses: actions/upload-artifact@v2
         with:
           name: pack

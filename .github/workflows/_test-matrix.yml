@@ -41,5 +41,4 @@ jobs:
         with:
           check-latest: true
           node-version: ${{ matrix.node }}
-      - uses: bahmutov/npm-install@v1
-      - run: npm run test
+      - run: yarn test

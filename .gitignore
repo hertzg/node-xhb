@@ -2,3 +2,12 @@
 node_modules/
 /dist
 /pack
+
+# Ignore Yarn files (using zero-installs)
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

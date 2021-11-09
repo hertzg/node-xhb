@@ -33,8 +33,9 @@ jobs:
         with:
           check-latest: true
           node-version: lts/*
-      - uses: bahmutov/npm-install@v1
-      - run: npx semantic-release
+      - run: yarn
+      - run: yarn run build
+      - run: yarn dlx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

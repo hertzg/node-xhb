@@ -38,6 +38,7 @@ module.exports = {
         assets: [
           'CHANGELOG.md',
           'package.json',
+          'yarn.lock',
           'package-lock.json',
           'npm-shrinkwrap.json',
         ],

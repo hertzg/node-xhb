@@ -42,7 +42,7 @@
     "semantic-release": "semantic-release"
   },
   "files": [
-    "dist/*"
+    "dist/**"
   ],
   "dependencies": {
     "printj": "^1.2.2",

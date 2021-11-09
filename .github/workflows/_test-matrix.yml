@@ -41,4 +41,5 @@ jobs:
         with:
           check-latest: true
           node-version: ${{ matrix.node }}
+      - run: yarn
       - run: yarn run test

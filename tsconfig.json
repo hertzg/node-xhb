@@ -4,5 +4,6 @@
     "outDir": "dist",
     "rootDir": "src",
     "noImplicitAny": false
-  }
+  },
+  "exclude": ["./dist/**/*"]
 }

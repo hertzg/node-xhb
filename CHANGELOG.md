@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
+### [2.1.1](https://github.com/hertzg/node-xhb/compare/v2.1.0...v2.1.1) (2021-11-10)
+
+### Bug Fixes
+
+- wrong binary path ([1fb3c2c](https://github.com/hertzg/node-xhb/commit/1fb3c2c94e0ddb8ba84c1fd73847efcd70f7fce9))
+- wrong binary path ([4e3b027](https://github.com/hertzg/node-xhb/commit/4e3b0275935952aee1b5f02851347e4b34b654dc))
+
+# Changelog
+
+All notable changes to this project will be documented in this file.
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
+
 ## [2.1.0](https://github.com/hertzg/node-xhb/compare/v2.0.0...v2.1.0) (2021-11-10)
 
 ### Features

@@ -1,10 +1,25 @@
 # XHB file read/write for NodeJS
-This package provides ability to read and modify xhb files created by HomeBank
-in somewhat sane manner.
 
-[HomeBank](http://homebank.free.fr/) is a personal finance and money management software application built and maintained by Maxime Doyen.
+This package provides ability to read and modify xhb files created by HomeBank in somewhat sane manner.
 
-## Installation and Usage
+[HomeBank](http://homebank.free.fr/) is a personal finance and money management software application built and
+maintained by Maxime Doyen.
+
+## Command Line Usage
+This package also includes a tiny cli utility `xhb` to convert between `.xhb` and `.json` formats
+
+```bash
+# Convert XHB to JSON
+$ npx xhb parse < database.xhb > database.json
+
+# Modify the database with common tools, just keep structure the same
+$ mv database.json database-modified.json
+
+# Convert JSON back to XHB
+$ npx xhb serialize < database-modified.json > database-modified.xhb
+```
+
+## Programmatic Usage
 
 ```bash
 $ npm install xhb --save
@@ -12,16 +27,15 @@ $ npm install xhb --save
 
 ```typescript
 import FS from 'fs'
-import {parse, serialize} from 'xhb'
+import { parse, serialize } from 'xhb'
 
-
-const contents = FS.readFileSync('./homebank.xhb', {encoding:'utf8'})
+const contents = FS.readFileSync('./homebank.xhb', { encoding: 'utf8' })
 const xhb = parse(contents)
 
 // modify / copy / clone the xhb object, whatever you need to do with it.
 
-const modified = serialize(xhb);
-FS.writeFileSync('./homebank-modified.xhb', modified, {encoding: 'utf8'})
+const modified = serialize(xhb)
+FS.writeFileSync('./homebank-modified.xhb', modified, { encoding: 'utf8' })
 ```
 
 ## API overview
@@ -58,12 +72,13 @@ export interface XHB {
 For more information, please see type definitions for respective entities from source code.
 
 ### FAQ
+
 Here are some questions that come up or most likely will come up.
 
 ##### Dates are in weird format, how do I convert them to js Dates?
 
-The dates are in GLib specific julian day format (which is not "real" julian day count).
-Consider using package [`gdate-julian`](https://github.com/hertzg/node-gdate-julian) package.
+The dates are in GLib specific julian day format (which is not "real" julian day count). Consider using
+package [`gdate-julian`](https://github.com/hertzg/node-gdate-julian) package.
 
 ---
 
@@ -89,9 +104,9 @@ HomeBank does not create them separately in XML. This package reads and write th
 
 ##### The XML produced is not "correct" xml and why do you use `sprintf` to create xml tags? That's stupid!
 
-This is the way HomeBank deals with XML files. Don't believe me? Check the source code on launchpad.
-The goal of this project is to be able to read and write files acceptable by that application so I mimic the way it
-deals with the file format.
+This is the way HomeBank deals with XML files. Don't believe me? Check the source code on launchpad. The goal of this
+project is to be able to read and write files acceptable by that application so I mimic the way it deals with the file
+format.
 
 See: [https://bazaar.launchpad.net/~mdoyen/homebank/5.2.x/view/head:/src/hb-xml.c#L1214](https://bazaar.launchpad.net/~mdoyen/homebank/5.2.x/view/head:/src/hb-xml.c#L1214)
 

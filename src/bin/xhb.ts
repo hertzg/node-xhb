@@ -1,25 +1,25 @@
 import Yargs from 'yargs'
-import {hideBin} from 'yargs/helpers'
+import { hideBin } from 'yargs/helpers'
 import { parse, serialize } from '../'
 
 const _collect = async (stream: NodeJS.ReadStream): Promise<Buffer> => {
-  const chunks: any[] = []
+  const chunks: Buffer[] = []
   for await (const chunk of stream) {
     chunks.push(chunk)
   }
-  return Buffer.from(chunks)
+  return Buffer.concat(chunks)
 }
 
 const parseAction = async () => {
-  const xhb = await _collect(process.stdin)
-  const object = parse(xhb.toString('utf8'))
+  const xhb = (await _collect(process.stdin)).toString('utf8')
+  const object = parse(xhb)
   process.stdout.end(JSON.stringify(object))
 }
 
 const serializeAction = async () => {
-  const json = await _collect(process.stdin)
-  const xhb = serialize(JSON.parse(json.toString('utf8')))
-  process.stdout.end(JSON.stringify(xhb))
+  const json = (await _collect(process.stdin)).toString('utf8')
+  const xhb = serialize(JSON.parse(json))
+  process.stdout.end(xhb)
 }
 
 const bootstrap = () => {

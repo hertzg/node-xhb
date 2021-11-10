@@ -7448,7 +7448,7 @@ __metadata:
     xml-parser: ^1.2.1
     yargs: ^17.2.1
   bin:
-    xhb: dist/bin/xhb
+    xhb: ./bin/xhb.js
   languageName: unknown
   linkType: soft
 

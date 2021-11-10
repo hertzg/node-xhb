@@ -9,8 +9,9 @@
     "email": "georgedot@gmail.com"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=16"
   },
+  "bin": "dist/bin/xhb",
   "keywords": [
     "xhb",
     "file",
@@ -42,11 +43,13 @@
     "semantic-release": "semantic-release"
   },
   "files": [
+    "bin/**",
     "dist/**"
   ],
   "dependencies": {
     "printj": "^1.2.2",
-    "xml-parser": "^1.2.1"
+    "xml-parser": "^1.2.1",
+    "yargs": "^17.2.1"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.0",
@@ -56,10 +59,11 @@
     "@semantic-release/github": "^8.0.0",
     "@semantic-release/npm": "^8.0.0",
     "@semantic-release/release-notes-generator": "^10.0.0",
-    "@tsconfig/node12": "^1.0.9",
+    "@tsconfig/node16": "^1.0.2",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.0.0",
     "@types/xml-parser": "^1.2.29",
+    "@types/yargs": "^17",
     "conventional-changelog-conventionalcommits": "^4.5.0",
     "jest": "^27.0.6",
     "prettier": "^2.2.1",

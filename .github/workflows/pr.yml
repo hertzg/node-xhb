@@ -23,7 +23,7 @@ jobs:
       - run: yarn
       - run: yarn run build
       - run: mkdir pack || true && yarn pack --out pack/%s-%v.tgz
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: pack
           path: |

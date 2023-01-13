@@ -6576,6 +6576,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rimraf@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "rimraf@npm:4.0.0"
+  bin:
+    rimraf: dist/cjs/src/bin.js
+  checksum: 0512f25f3959eaeb5fd5b616765d73b187ba5b3b9a2e697bc4b66cd1f5cb51c299ae2e48a32c176115148599356492f004de0c468817f09fa3b841bf31f0421a
+  languageName: node
+  linkType: hard
+
 "run-parallel@npm:^1.1.9":
   version: 1.2.0
   resolution: "run-parallel@npm:1.2.0"
@@ -7694,7 +7703,7 @@ __metadata:
     jest: ^29.0.0
     prettier: ^2.2.1
     printj: ^1.2.2
-    rimraf: ^3.0.2
+    rimraf: ^4.0.0
     semantic-release: ^20.0.0
     ts-jest: ^29.0.0
     ts-node: ^10.4.0

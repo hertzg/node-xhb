@@ -58,7 +58,7 @@
     "@semantic-release/git": "^10.0.0",
     "@semantic-release/github": "^8.0.0",
     "@semantic-release/npm": "^10.0.0",
-    "@semantic-release/release-notes-generator": "^10.0.0",
+    "@semantic-release/release-notes-generator": "^11.0.0",
     "@tsconfig/node16": "^1.0.2",
     "@types/jest": "^29.0.0",
     "@types/node": "^18.0.0",
@@ -73,5 +73,5 @@
     "ts-node": "^10.4.0",
     "typescript": "^5.0.0"
   },
-  "packageManager": "yarn@3.5.0"
+  "packageManager": "yarn@3.5.1"
 }

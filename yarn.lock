@@ -1826,6 +1826,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tsconfig/node16@npm:^16.0.0":
+  version: 16.1.0
+  resolution: "@tsconfig/node16@npm:16.1.0"
+  checksum: a0a176492e3802a5340eda1e61eabc8d4767e46496bc080ce9c381993ce8c5fb3df8f65267c3a9af4335bc00a85028845f795ea27545f63d62b93ab6675cf8fa
+  languageName: node
+  linkType: hard
+
 "@tufjs/models@npm:1.0.1":
   version: 1.0.1
   resolution: "@tufjs/models@npm:1.0.1"
@@ -8152,7 +8159,7 @@ __metadata:
     "@semantic-release/github": ^9.0.0
     "@semantic-release/npm": ^10.0.0
     "@semantic-release/release-notes-generator": ^11.0.0
-    "@tsconfig/node16": ^1.0.2
+    "@tsconfig/node16": ^16.0.0
     "@types/jest": ^29.0.0
     "@types/node": ^18.0.0
     "@types/xml-parser": ^1.2.29

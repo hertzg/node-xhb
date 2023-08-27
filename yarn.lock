@@ -2928,12 +2928,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"conventional-changelog-conventionalcommits@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "conventional-changelog-conventionalcommits@npm:6.0.0"
+"conventional-changelog-conventionalcommits@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "conventional-changelog-conventionalcommits@npm:7.0.0"
   dependencies:
     compare-func: ^2.0.0
-  checksum: 40b9c731bc3d2e1c9d0c66c793768afa6d99826de24c458e527f1e189641d916b0dc5a195f10f4a5e974bf64b2919a5966b9818003ba0a32f723dfa292ad13cd
+  checksum: aa2f26d15e4310da4081061764085891584a070a345f51db005b8cc5de4a2b8beae2911f28b90c8622006a49b0aa24c2f30ba3e4975ec0c80d8d8b9f105ff2eb
   languageName: node
   linkType: hard
 
@@ -8164,7 +8164,7 @@ __metadata:
     "@types/node": ^18.0.0
     "@types/xml-parser": ^1.2.29
     "@types/yargs": ^17
-    conventional-changelog-conventionalcommits: ^6.0.0
+    conventional-changelog-conventionalcommits: ^7.0.0
     jest: ^29.0.0
     prettier: ^3.0.0
     printj: ^1.2.2

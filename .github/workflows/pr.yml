@@ -16,14 +16,14 @@ jobs:
     steps:
       - run: git config --global core.autocrlf false
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           check-latest: true
           node-version: lts/*
       - run: yarn
       - run: yarn run build
       - run: mkdir pack || true && yarn pack --out pack/%s-%v.tgz
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: pack
           path: |

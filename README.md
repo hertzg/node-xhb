@@ -1,5 +1,26 @@
 # XHB file read/write for NodeJS
 
+> [!IMPORTANT]
+> **This package has moved. This repository is archived and the npm `xhb` package is deprecated.**
+>
+> Development continues as **[`@hertzg/xhb`](https://jsr.io/@hertzg/xhb)** on JSR, over in
+> [hertzg/jsr-monorepo](https://github.com/hertzg/jsr-monorepo). It is a full port of the
+> parse/serialize code you see here, runs on Deno, Node and Bun, and is where all future fixes land.
+>
+> ```bash
+> deno add jsr:@hertzg/xhb   # Deno
+> npx jsr add @hertzg/xhb    # Node
+> bunx jsr add @hertzg/xhb   # Bun
+> ```
+>
+> **Were you using the `xhb` command line tool?** The JSR package ships the library only for now —
+> `xhb parse` / `xhb serialize` did not make the trip. If you rely on it, please
+> [open an issue](https://github.com/hertzg/jsr-monorepo/issues/new) on the monorepo and say a word
+> about how you use it; that is genuinely useful to know, and a PR would be even more welcome. It is
+> a small piece of work, it simply has not come up yet.
+>
+> Everything below is kept for reference and describes the old npm package.
+
 This package provides ability to read and modify xhb files created by HomeBank in somewhat sane manner.
 
 [HomeBank](http://homebank.free.fr/) is a personal finance and money management software application built and

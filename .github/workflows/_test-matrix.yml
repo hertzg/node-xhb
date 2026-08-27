@@ -36,8 +36,8 @@ jobs:
       fail-fast: ${{ inputs.fail-fast }}
     steps:
       - run: git config --global core.autocrlf false
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           check-latest: true
           node-version: ${{ matrix.node }}
